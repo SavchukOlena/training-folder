@@ -142,3 +142,84 @@
     background-size: contain;
 
 }
+
+/* < !-- ----------ANIMATION---------------- --> */
+
+.wrapper {
+    width: 70%;
+    height: 120px;
+    border: 3px solid green;
+    margin-bottom: 300px;
+}
+
+.wrapper:hover .circle {
+    animation-play-state: paused;
+}
+
+.circle {
+    width: 70px;
+    height: 70px;
+    background-color: blue;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-top: 20px;
+    position: relative;
+
+    animation: circle-run 2000ms linear infinite alternate,
+    circle-color-change 2000ms linear infinite alternate,
+    circle-scale-change 2000ms linear infinite alternate
+
+    
+}
+
+@keyframes circle-run {
+    0% {
+        left: 0;
+        
+    }
+
+    20% {
+        border-radius: 0;
+    }
+
+    
+
+    100% {
+        left: 500px;
+        
+    }
+}
+
+@keyframes circle-color-change {
+    10% {
+        background-color: teal;
+
+    }
+
+    20% {
+        background-color: rgb(15, 240, 34);
+    }
+
+
+
+    100% {
+        background-color: rgb(163, 8, 130);
+
+    }
+}
+
+@keyframes circle-scale-change {
+    10% {
+        transform:scale(0.2);
+        
+    }
+
+    20% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+
+    }
+}

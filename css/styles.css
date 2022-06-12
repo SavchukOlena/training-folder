@@ -1,5 +1,150 @@
 
 
+body {
+    
+}
+/* < !-- ------Кнопка с выезжающей иконкой------- --> */
+
+.wrapper-for-button {
+    width: 400px;
+    height: 200px;
+    border: 1px solid black;
+    margin-top: 80px;
+    margin-left: 80px;
+    padding-top: 80px;
+    padding-left: 80px;
+}
+.button-with-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    overflow: hidden; 
+    
+    font-size: 20px;
+    
+    background-color: yellowgreen;
+    border: 3px solid teal;
+    cursor: pointer;
+
+}
+
+.button-with-icon::before {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+
+    content: '';
+    display: block;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/envelope.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: transform 1000ms linear;
+}
+
+.button-with-icon:hover::before {
+    
+    transform: translateY(-50px);
+}
+
+
+
+.button-with-icon::after {
+    position: absolute;
+    transform: translateY(220%);
+    left: 15px;
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/fb-test.svg);
+    transition: transform 1000ms linear;
+}
+
+.button-with-icon:hover::after {
+    transform: translateY(5%);
+}
+
+
+ /* !-- -------Выпадающее меню------ --> */
+
+.menu-wrapper {
+    width: 500px;
+    height: 200px;
+    margin-top: 20px;
+    margin-left: 80px;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.main-menu {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+}
+
+.menu-item {
+    position: relative;
+    border: 1px solid crimson;
+    padding: 5px;
+}
+
+.menu-item::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width:100%;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    background-color: brown;
+    transform: scaleX(0);
+    opacity: 0;
+    transition: transform 500ms linear, opacity 500ms linear;
+
+    
+}
+
+.menu-item:hover::after {
+    transform: scaleX(1);
+    opacity: 1;
+    
+}
+
+
+
+.menu-item + .menu-item {
+    margin-left: 20px;
+}
+
+.sub-menu {
+    position: absolute;
+    left:0;
+    top: 100%;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    list-style: none;
+    display: none;
+}
+
+.menu-item:hover .sub-menu{
+    display: block;
+}
+
+
 /* < !-- --------Фон и оформительные изображения--------- -->
  */
 
